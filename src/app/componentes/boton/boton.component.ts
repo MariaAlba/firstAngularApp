@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResolveStart } from '@angular/router';
 
 @Component({
   selector: 'app-boton',
@@ -23,5 +24,28 @@ export class BotonComponent implements OnInit {
   }
 
   //declarar funciones
+
+  sumaResta = (numero) => {
+
+    let decremento=false;
+    
+    numero++;
+  
+    this.numero = numero;
+    
+    
+    if(this.numero > 10 && decremento==false){decremento = true;}
+    
+    
+    if(decremento==true){}
+    
+    console.log('sumaResta',decremento,this.numero);
+
+
+  }
+
+ 
+
+
 
 }
