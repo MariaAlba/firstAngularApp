@@ -1,3 +1,45 @@
 <h1 class="text-center">{{title | uppercase}}</h1>
 
-<h2>Welcome to Hell</h2>
+<h2 class="text-center mb-5">Welcome to Hell</h2>
+
+<!--{{productos | json}}-->
+
+<div class="row mt-5">
+  
+  <!--listado-->
+  <div class="col-md-4">
+    <ul class="list-group">
+      <li class="list-group-item {{ (p.id==pSeleccionado.id) ? 'active': '' }}"
+       *ngFor="let p of productos" (click)="seleccionarProducto(p)">
+        <b>{{p.nombre}}</b>
+      </li>
+    </ul>
+  </div>
+  
+  <!--detalle-->
+  <div class="col-md-8">
+   
+    <div class="card m-auto" style="width: 18rem;">
+     
+      <!-- <img src="./assets/gluten.png" alt="sin gluten" id="glutenIcon" *ngIf="pSeleccionado.gluten"> -->
+      <span class="badge badge-pill badge-success d-inline gluten" *ngIf="!pSeleccionado.gluten">sin gluten</span>
+      <span class="badge badge-pill badge-danger d-inline gluten" *ngIf="pSeleccionado.gluten">con gluten</span>
+      
+      <img src="{{pSeleccionado.imagen}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center"> {{pSeleccionado.nombre | uppercase}}</h5>
+        <p class="card-text">Precio:  {{pSeleccionado.precio}}€</p>
+        <p class="card-text">Categoría: {{pSeleccionado.categoria.nombre}}</p>
+        <p class="card-text">Histórico precios:</p>
+        <ul class="list-group">
+          <li class="list-group-item" 
+          *ngFor="let precio of  pSeleccionado.historico">
+            <b>{{precio.fecha}}:</b> {{precio.precio}}€
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
