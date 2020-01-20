@@ -1,38 +1,49 @@
 {
-  "colores":[
-  {
-    "id":1,
-    "nombre":"negro",
-    "hex":"000"
-  },
-  {
-    "id":2,
-    "nombre":"blanco",
-    "hex":"FFF"
-  },
-  {
-    "id":3,
-    "nombre":"azul",
-    "hex":"0000FF"
-  },
-  {
-    "id":4,
-    "nombre":"rojo",
-    "hex":"FF0000"
-  },
-  {
-    "id":5,
-    "nombre":"verde",
-    "hex":"00FF00"
-  }
-  ],
-  "productos":[
+  "colores": [
     {
-      "id":1,
-      "nombre":"cafe"},
+      "id": 1,
+      "nombre": "negro",
+      "hex": "000"
+    },
+    {
+      "id": 3,
+      "nombre": "azul",
+      "hex": "0000FF"
+    },
+    {
+      "id": 4,
+      "nombre": "rojo",
+      "hex": "FF0000"
+    },
+    {
+      "id": 5,
+      "nombre": "verde",
+      "hex": "00FF00"
+    },
+    {
+      "nombre": "teal",
+      "hex": "00FFDD",
+      "id": 6
+    },
+    {
+      "nombre": "blanco",
+      "id": 7,
+      "hex": "FFF"
+    },
+    {
+      "nombre": "blanco",
+      "id": 2,
+      "hex": "FFF"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "cafe"
+    },
     {
       "id": 2,
-      "nombre":"leche"
+      "nombre": "leche"
     }
   ],
   "posts": [
