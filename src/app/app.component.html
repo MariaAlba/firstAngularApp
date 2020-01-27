@@ -1,14 +1,22 @@
-<h1 class="text-center">{{title | uppercase}}</h1>
+
+<app-navbar></app-navbar>
+
+<main class="container pt-2">
+  <!--MODULO de angular para sistema de rutas  o mavegacion-->
+  <router-outlet></router-outlet>
+</main>
+
+<!-- <h1 class="text-center">{{title | uppercase}}</h1>
 
 <h2 class="text-center mb-5">Welcome to Hell</h2>
 
 <app-boton></app-boton>
 
-<!--{{productos | json}}-->
+{{productos | json}}
 
 <div class="row mt-5">
   
-  <!--listado-->
+  <!--listado
   <div class="col-md-4">
     <ul class="list-group">
       <li class="list-group-item {{ (p.id==pSeleccionado.id) ? 'active': '' }}"
@@ -18,12 +26,12 @@
     </ul>
   </div>
   
-  <!--detalle-->
+  detalle
   <div class="col-md-8">
    
     <div class="card m-auto" style="width: 18rem;">
      
-      <!-- <img src="./assets/gluten.png" alt="sin gluten" id="glutenIcon" *ngIf="pSeleccionado.gluten"> -->
+       <img src="./assets/gluten.png" alt="sin gluten" id="glutenIcon" *ngIf="pSeleccionado.gluten"> 
       <span class="badge badge-pill badge-success d-inline gluten" *ngIf="!pSeleccionado.gluten">sin gluten</span>
       <span class="badge badge-pill badge-danger d-inline gluten" *ngIf="pSeleccionado.gluten">con gluten</span>
       
@@ -43,5 +51,5 @@
     </div>
   </div>
 
-</div>
+</div> -->
 
