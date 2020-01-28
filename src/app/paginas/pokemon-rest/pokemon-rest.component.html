@@ -1,1 +1,19 @@
-<p>pokemon-rest works!</p>
+
+<pre>
+    {{pokemon | json}}
+</pre>
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top fluid"  src="{{pokemon.imagen}}" alt="{{pokemon.nombre}}">
+    <div class="card-body">
+      <h5 class="card-title">{{pokemon.id}} - {{pokemon.nombre}}</h5>
+      <p class="card-text"></p>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top fluid"  src="{{p.imagen}}" alt="{{p.nombre}}">
+    <div class="card-body">
+      <h5 class="card-title">{{p.id}} - {{p.nombre}}</h5>
+      <p class="card-text"></p>
+    </div>
+  </div>
