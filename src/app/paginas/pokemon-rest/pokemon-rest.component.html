@@ -16,9 +16,10 @@
   <div class="card" style="width: 18rem;">
     <img class="card-img-top fluid"  src="{{p.imagen}}" alt="{{p.nombre}}">
     <div class="card-body">
-      <h5 class="card-title">{{p.id}} - {{p.nombre}}</h5>
-      <p class="card-text">
-      Habilidad: <b>{{p.habilidad}}</b>
-      </p>
+      <h5 class="card-title text-center">{{p.id}} - {{p.nombre}}</h5>
+      <h5>Habilidades</h5>
+      <ul class="card-text">
+        <li *ngFor="let h of p.habilidades">{{h}}</li>
+      </ul>
     </div>
   </div>

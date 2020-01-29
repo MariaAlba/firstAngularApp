@@ -18,6 +18,7 @@ export class ArraysComponent implements OnInit {
   precioTotalFrutasAmarillas: number;
   primeraFrutaVerde: any;
   colores: Array<string>;
+  prueba:any;
 
   constructor() {
     console.trace('ArraysComponent constructor')
@@ -46,6 +47,11 @@ export class ArraysComponent implements OnInit {
     console.debug(doubles);
     console.debug('------');
 
+
+    this.prueba = this.frutas.map(el => {
+      console.debug(el);
+      return el.colores;
+    });
   }
 
   ngOnInit() {

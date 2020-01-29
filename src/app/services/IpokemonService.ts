@@ -1,20 +1,19 @@
 import { Observable } from "rxjs";
 
- interface IPokemonService {
+export interface IPokemonService {
 
     /**
-     * Recuperamos los datos en json de un pokemon por su nombre
-     * @param nombre : string nombre del pokemonn a buscar
+     * Recuperamos los datos en JSON de un Pokemon por su nombre
+     * @param nombre: string nombre del pokemon a buscar
+     * @see GET /api/v2/pokemon/{nombre}/
      */
-    getPokemon(nombre:string):Observable<any>;
-
+    getPokemon( nombre: string): Observable<any>;
 
     /**
-     * Recupera un json con las caracteriscas de un pokemon
-     * @param id :number identificador del pokemon
-     * @see  GET/api/v2/characteristic/{id}/
+     * recupera el nombre de la habilidad en castellano
+     * @param nombreHabilidad: nombre habilidad en ingles
+     * @see GET /api/v2/ability/{name}/
      */
-    getCaracteristicas(id:number):Observable<any>;
-
+    getHabilidad( nombreHabilidad: string): Observable<any>;
 
 }

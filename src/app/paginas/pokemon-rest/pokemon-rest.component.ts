@@ -50,37 +50,28 @@ export class PokemonRestComponent implements OnInit {
         this.p.nombre = data.name;
         this.p.id = data.id;
         this.p.imagen = data.sprites.front_default;
-        this.p.habilidad = data.abilities[0].ability.url;
+        this.p.habilidades = [];
+  
      
+       let habilidadesNames = data.abilities.map( el => el.ability.name );
+        console.debug('habilidades en ingles %o', habilidadesNames);
+
+        habilidadesNames.forEach( habilidad => {
+            // conseguir su habilidad en castellano
+            this.pokemonService.getHabilidad( habilidad ).subscribe(
+              json => {
+                console.debug('habilidad %o' ,  json);
+                let habilidadCastellano = json.names.find( el => el.language.name === 'es' );
+                console.debug('recupera habiliada en castellano %o', habilidadCastellano.name);
+                this.p.habilidades.push(habilidadCastellano.name);
+               
+                console.debug('aki',this.p.habilidades);
+              });
+            });
+        
+        
         this.mensaje = 'Pokemon cargado desde https:pokeapi.co';
 
-        //conseguir habilidad
-        this.pokemonService.getCaracteristicas(this.p.habilidad).subscribe(
-
-          data => {
-            console.debug('peticion correcta data caracteristicas %o', data);
-            
-           let x =  data.names.find((el)=>el.language.name === 'es');
-           this.p.habilidad = x.name;
-         
-          
-         console.debug('x',x);
-           
-            //conseguir habilidad
-            
-          },
-          error => {
-            console.warn('peticion erronea error %o', error);
-          
-          },
-          () => {
-            console.trace('esto se hace siempre');
-          }
-          
-    
-    
-        );
-        
       },
       error => {
         console.warn('peticion erronea error %o', error);
