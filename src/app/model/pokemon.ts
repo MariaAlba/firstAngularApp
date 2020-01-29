@@ -3,13 +3,13 @@ export class Pokemon {
     private _id: number;    
     private _nombre: string;
     private _imagen: string;
+    private _habilidad: string;
     
     constructor(nombre:string){
         this.id = 0;
         this.nombre = nombre;
         this.imagen = 'http://aux.iconspalace.com/uploads/2116404522463441715.png';
-    }
-    
+    }  
     
     public get nombre(): string {
         return this._nombre;
@@ -30,6 +30,13 @@ export class Pokemon {
     }
     public set imagen(value: string) {
         this._imagen = value;
+    }
+
+    public get habilidad(): string {
+        return this._habilidad;
+    }
+    public set habilidad(value: string) {
+        this._habilidad = value;
     }
 
   

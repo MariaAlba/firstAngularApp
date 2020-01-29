@@ -1,5 +1,5 @@
 
-<pre>
+<!-- <pre>
     {{pokemon | json}}
 </pre>
 
@@ -9,11 +9,16 @@
       <h5 class="card-title">{{pokemon.id}} - {{pokemon.nombre}}</h5>
       <p class="card-text"></p>
     </div>
-  </div>
+  </div> -->
+ 
+  <div *ngIf="mensaje" class="alert alert-primary">{{mensaje}}</div>
+ 
   <div class="card" style="width: 18rem;">
     <img class="card-img-top fluid"  src="{{p.imagen}}" alt="{{p.nombre}}">
     <div class="card-body">
       <h5 class="card-title">{{p.id}} - {{p.nombre}}</h5>
-      <p class="card-text"></p>
+      <p class="card-text">
+      Habilidad: <b>{{p.habilidad}}</b>
+      </p>
     </div>
   </div>

@@ -9,21 +9,22 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokemonRestComponent implements OnInit {
 
-
   pokemon:Pokemon;
   p:any;
-
+  mensaje:string;
+  
   constructor(private pokemonService:PokemonService) {
     console.trace('PokemonRestComponent constructor')
     this.pokemon = new Pokemon('pikachu');
     console.debug(this.pokemon);
  
-    this.p = new Pokemon('');
+    this.p ={};
+    this.mensaje ='';
    
    }
 
   ngOnInit() {
-    console.trace('PokemonRestComponene ngOnInit');
+    console.trace('PokemonRestComponent ngOnInit');
 
     //lamadas a los servicios
 
@@ -48,12 +49,42 @@ export class PokemonRestComponent implements OnInit {
         
         this.p.nombre = data.name;
         this.p.id = data.id;
-        this.p.imagen = data.sprites["front_female"];
+        this.p.imagen = data.sprites.front_default;
+        this.p.habilidad = data.abilities[0].ability.url;
      
+        this.mensaje = 'Pokemon cargado desde https:pokeapi.co';
+
+        //conseguir habilidad
+        this.pokemonService.getCaracteristicas(this.p.habilidad).subscribe(
+
+          data => {
+            console.debug('peticion correcta data caracteristicas %o', data);
+            
+           let x =  data.names.find((el)=>el.language.name === 'es');
+           this.p.habilidad = x.name;
+         
+          
+         console.debug('x',x);
+           
+            //conseguir habilidad
+            
+          },
+          error => {
+            console.warn('peticion erronea error %o', error);
+          
+          },
+          () => {
+            console.trace('esto se hace siempre');
+          }
+          
+    
+    
+        );
         
       },
       error => {
         console.warn('peticion erronea error %o', error);
+        this.mensaje = 'No exixte pokemon X';
       },
       () => {
         console.trace('esto se hace siempre');
@@ -65,6 +96,7 @@ export class PokemonRestComponent implements OnInit {
     
 
 
+   
 
 
   }
