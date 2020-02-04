@@ -11,6 +11,8 @@ import { ArraysComponent } from './paginas/arrays/arrays.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { EjemploClaseComponent } from './paginas/ejemplo-clase/ejemplo-clase.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
+import { EstilosComponent } from './paginas/estilos/estilos.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -25,12 +27,14 @@ import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.compon
     NavbarComponent,
     EjemploClaseComponent,
     PokemonRestComponent,
+    EstilosComponent,
 
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    AppRoutingModule
+    HttpClientModule, //modulo para llamadas HTTP
+    AppRoutingModule,
+    FormsModule //modulo para formus con banan in a box
   ],
   providers: [],
   bootstrap: [AppComponent]

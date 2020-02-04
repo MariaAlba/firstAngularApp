@@ -1,0 +1,69 @@
+// soporta comentarios de linea que luego no se ven en css
+
+/*VARIABLES*/
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$color-pink: #da9393;
+$color-green:#00ff00;
+$color-black:#000;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+h1{color:$color-pink;}//usamos variables
+
+/*NESTING*/
+p{
+    code{
+        color:$color-green;
+        background-color: $color-black;
+        padding: 2px 3px;
+    }
+}
+
+/*MIXINGS o funciones para reutilizar*/
+//declarar mixin
+@mixin redondear ($radio,$color){
+    border-radius:$radio;
+    border: 1px solid $color;
+    padding: 10px;
+}
+
+//usar mixin
+.borde10{
+    @include redondear(10px,red);
+}
+.borde50{
+    @include redondear(50%,blue)
+}
+
+/*HERENCIA o EXTEND*/
+%boton{
+    padding: 15px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    width:9em;
+    display: inline-block;
+    
+    // usar pseudoselector mediante & para nesting
+    &:hover{
+        cursor:pointer;
+        color:white;
+    }
+}
+
+.boton{
+    @extend %boton;
+}
+
+.boton-verde{
+    @extend %boton;
+    background-color: $color-green;    
+}
+
+.boton-rojo{
+    @extend %boton;
+    background-color: red;
+}

@@ -1,1 +1,31 @@
-<h2>Página inicio</h2>
+<h2>{{titulo}}</h2>
+
+<h3>double Binding o Banana in a Box</h3>
+<code>[(banana)]</code>
+
+<p>
+<button (click)="contarClicks()">Dale</button></p>
+<p>
+    {{numClick}}</p>
+
+<h1>  {{title}}</h1>
+<p [hidden]="!visible">  Adiós
+    <button (click)="decirAdios()">Decir adiós</button>
+</p>
+
+<hr>
+
+<p>Se pueden declarar propiedades al vuelo</p>
+
+<div [class] = "claseSeleccionada">
+    color cambia  al hacer click
+    <button (click)="claseSeleccionada='rojo'">color</button>
+    <button (click)="claseSeleccionada='verde'">color</button>
+</div>
+
+
+<p>
+    Para unsar <code>banana im a boc importar el codig de <code>ForMModeule</code>ForMModeule</code>
+    <label for="">Nombre = {{jugador}}</label><br>
+    
+</p>

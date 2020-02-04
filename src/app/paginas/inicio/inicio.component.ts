@@ -7,9 +7,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  titulo:string;
+  numClick:number;
+  visible :boolean;
+
+  constructor() {
+    console.trace('Constructor');
+
+    this.titulo = "Welcome to Hell";
+    this.numClick = 0;
+    this.visible = false;
+
+   }//Constructor
 
   ngOnInit() {
-  }
+    console.trace('ngOnInit')
 
-}
+
+  }//ngOnInit 
+
+
+  contarClicks(){
+    console.trace('contar click');
+    this.numClick++;
+  }// contarClicks
+
+
+  decirAdios() {   
+    console.trace('decir adios'); 
+    this.visible = true;  
+  } //decorAdios
+
+}//inicio componente
