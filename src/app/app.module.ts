@@ -13,6 +13,7 @@ import { EjemploClaseComponent } from './paginas/ejemplo-clase/ejemplo-clase.com
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
 import { EstilosComponent } from './paginas/estilos/estilos.component';
 import { FormsModule } from '@angular/forms';
+import { JuegoComponent } from './paginas/juego/juego.component';
 
 
 
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     EjemploClaseComponent,
     PokemonRestComponent,
     EstilosComponent,
+    JuegoComponent,
 
   ],
   imports: [

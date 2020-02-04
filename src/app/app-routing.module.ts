@@ -4,6 +4,7 @@ import { InicioComponent } from './paginas/inicio/inicio.component';
 import { ArraysComponent } from './paginas/arrays/arrays.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
 import { EstilosComponent } from './paginas/estilos/estilos.component';
+import { JuegoComponent } from './paginas/juego/juego.component';
 
 /**
  * Definir las rutas de la app de angular
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'arrays', component: ArraysComponent},
   {path: 'pokemon-rest', component: PokemonRestComponent},
-  {path: 'estilos', component: EstilosComponent}
+  {path: 'estilos', component: EstilosComponent},
+  {path: 'juego', component: JuegoComponent}
 ];
 
 @NgModule({
