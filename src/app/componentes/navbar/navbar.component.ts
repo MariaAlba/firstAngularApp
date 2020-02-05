@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+
+  //TODO declarar array para hacer for [ruta,titulo,icono] para hacer for luego
+
+
   constructor() { }
 
   ngOnInit() {

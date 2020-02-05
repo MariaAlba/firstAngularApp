@@ -14,6 +14,8 @@ import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.compon
 import { EstilosComponent } from './paginas/estilos/estilos.component';
 import { FormsModule } from '@angular/forms';
 import { JuegoComponent } from './paginas/juego/juego.component';
+import { DirectivasComponent } from './paginas/directivas/directivas.component';
+import { FiltrosComponent } from './paginas/filtros/filtros.component';
 
 
 
@@ -30,6 +32,8 @@ import { JuegoComponent } from './paginas/juego/juego.component';
     PokemonRestComponent,
     EstilosComponent,
     JuegoComponent,
+    DirectivasComponent,
+    FiltrosComponent,
 
   ],
   imports: [
