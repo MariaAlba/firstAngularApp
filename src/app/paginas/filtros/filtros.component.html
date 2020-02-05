@@ -1,1 +1,45 @@
-<p>filtros works!</p>
+<h2>{{'Filtros' | uppercase}}</h2>
+<p><a href="https://angular.io/api?type=pipe" target="_blank">API de filtros</a></p>
+
+<h3>{{'Ejemplos filtros de angular'|titlecase }}</h3>
+<code>{{ value_expression | uppercase }}</code>
+
+<code>coche|json</code>
+<pre>{{coche | json}}</pre>
+
+<code>coche.nombre|uppercase</code>
+<p>{{coche.nombre | uppercase}}</p>
+
+<code>coche.color | lowercase</code> 
+<p>{{coche.color | lowercase}}</p>
+{{coche.color | lowercase}}
+
+<code>coche.precio | currency</code> 
+<p>{{coche.precio | currency:'EUR':'symbol':'2.2-2'}}</p>
+<p class="alert alert-danger">TODO buscar como poner locale</p>
+
+<code>coche.nombre | slice:0:5</code>
+<p><b>{{coche.nombre | slice: 0:5}}</b></p>
+<code>coche.nombre | slice:5</code>
+<p class="text-info">{{coche.nombre | slice : 5}}</p>
+
+<hr class="hr">
+<h3>Filtrando listas</h3>
+
+<label for="">Búsqueda:{{busqueda}} </label>
+<input class="form-control" type="search" [(ngModel)]="busqueda" placeholder="Buscar por nombre"><br>
+
+<ul class="list-group">
+    <li *ngFor="let animal of animales | animalesFiltro: busqueda " class="list-group-item">
+      <img src="{{animal.Imagen}}" class="circle" width="100" height="100" alt="">  
+      <div>
+          <p class="nombre">{{animal.Nombre}}</p>
+          <p class="obs">{{animal.Observacion}}</p>
+      </div>
+      
+    </li>
+</ul>
+
+<hr class="hr">
+<h3>Ejemplos Custom Filter</h3>
+<p><a href="https://angular.io/guide/pipes" target="_blank">Documentación oficial</a></p>

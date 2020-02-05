@@ -1,1 +1,45 @@
-<p>directivas works!</p>
+<h2>Directivas</h2>
+<p>
+    <a href="https://angular.io/guide/attribute-directives" target="_blank">Documentación oficial</a>
+</p>
+
+<p>En Angular hay tres tipos de directivas</p>
+
+<dl>
+    <dt>Componentes</dt>
+    <dd>Directivas con plantilla en HTML</dd>
+
+    <dt>Estrucutrales</dt>
+    <dd>
+        cambian el DOM añdiendo o removiendo elementos, por jemplo *ngIf
+    </dd>
+
+    <dt>Atributo</dt>
+    <dd>
+        cambian la apariencia de un elemento del DOM, por ejemplo NgStyle o [hidden]
+    </dd>
+</dl>
+
+<p appHello="yellow">Podemos crear nuestras propia directivas usando el comando 
+    <code>ng g d nombreDeDirectiva</code>.
+    Se pueden ver las trazas en la consola.
+</p>
+<br>
+<br>
+<span [appHello] = "'orange'"><code>[appHello]="'orange'"</code></span>
+
+<hr>
+<h3>Ejercicio</h3>
+<p appSubrayar="red">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem expedita quaerat ad, ullam itaque eius veritatis fugit veniam enim, illum fuga pariatur ipsam necessitatibus quam voluptatem deleniti sed odit dolor.</p>
+<p [appSubrayar] = "'green'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fugiat minima quas culpa dolore! Itaque eveniet earum harum aspernatur facere fugit fugiat rem neque laboriosam, ratione nesciunt, similique nam ut.</p>
+<p [appSubrayar]="colorSel">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ex, tenetur nesciunt non, culpa beatae quam iste quibusdam magnam sint doloribus sit, voluptatem nostrum. Quis impedit dolores odit commodi nemo.</p>
+<hr>
+<h4>Selecciona color
+    <input type="color" name="" id="" [(ngModel)]="colorSel">
+</h4>
+<input type="radio" name="col" [(ngModel)]="colorSel" value="pink">Rosa <br>
+<input type="radio" name="col" [(ngModel)]="colorSel" value="orange">Naranja <br>
+<input type="radio" name="col" [(ngModel)]="colorSel" value="teal">Peru <br>
+
+<!--otra forma de hacer-->
+<input type="radio" name="col" (click)="colorSel='peru'">Marron <br>

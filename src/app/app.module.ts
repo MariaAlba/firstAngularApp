@@ -16,6 +16,9 @@ import { FormsModule } from '@angular/forms';
 import { JuegoComponent } from './paginas/juego/juego.component';
 import { DirectivasComponent } from './paginas/directivas/directivas.component';
 import { FiltrosComponent } from './paginas/filtros/filtros.component';
+import { HelloDirective } from './directivas/hello.directive';
+import { SubrayarDirective } from './directivas/subrayar.directive';
+import { AnimalesPipe } from './pipes/animales.pipe';
 
 
 
@@ -34,6 +37,9 @@ import { FiltrosComponent } from './paginas/filtros/filtros.component';
     JuegoComponent,
     DirectivasComponent,
     FiltrosComponent,
+    HelloDirective,
+    SubrayarDirective,
+    AnimalesPipe,
 
   ],
   imports: [

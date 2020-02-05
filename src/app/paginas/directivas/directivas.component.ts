@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivasComponent implements OnInit {
 
-  constructor() { }
+  colorSel:string;
+  
+  constructor() { 
+    console.trace('DirectivasComponent constructor');
+    this.colorSel = "yellow";
+  }//Constructor
+
 
   ngOnInit() {
   }
 
-}
+}//DirectivasComponent
