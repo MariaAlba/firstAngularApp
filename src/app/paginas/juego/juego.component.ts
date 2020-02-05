@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+const TIEMPO = 2000;
+
 @Component({
   selector: 'app-juego',
   templateUrl: './juego.component.html',
@@ -8,38 +10,47 @@ import { Component, OnInit } from '@angular/core';
 export class JuegoComponent implements OnInit {
 
   jugador: string;
-  ranking:any;
-  ranked:any;
   puntos:number;
+  ranking:Map<string,number>;
+ 
+  deshabilitado:boolean;
+  
 
   constructor() { 
-    console.trace('constructor');
+    console.trace(' JuegoComponent constructor');
     this.jugador = '';
-    this.ranked = {"nombre":"","puntos":0 };
-    this.ranking = [];
     this.puntos = 0;
+    this.ranking = new Map();
+    
+    this.deshabilitado = true;
   } //constructor
 
   ngOnInit() {
+    this.ranking = this.ranking;
     console.trace('onInit')
   } //ngOnInit
 
-  startGame(jugador){
+  startGame(jugador):void{
+    
     console.trace('startGame',jugador);
-    this.ranked.nombre=jugador;
-    this.ranked.puntos = 0;
-    this.ranking.push(this.ranked);
-
+    
+    this.deshabilitado = false;
+    
+    
+    setTimeout( ()=>{
+      console.debug('termina TIMEOUT');
+      this.deshabilitado=true;
+      this.ranking.set(this.jugador,this.puntos);
+      this.puntos = 0;
+      this.jugador = '';
+     
+    },TIEMPO);
+  
   }//startGame
 
-  stopGame(){
-    
-  }//stopGame
-  
-  sumarPuntos(){
+  sumarPuntos():void{
     console.trace('sumarpuntos');
-    this.puntos++;
-    setTimeout(this.stopGame,10000);
+    this.puntos++;   
   }
 
 
