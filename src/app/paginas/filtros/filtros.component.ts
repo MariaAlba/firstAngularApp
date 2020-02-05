@@ -10,11 +10,20 @@ export class FiltrosComponent implements OnInit {
 
   coche:any;
   animales :Array<any>;
+  tipos:Array<string>;
 
 
   constructor() { 
     console.trace(`FiltrosComponent constructor`);
     this.animales = ANIMALES;
+    this.tipos = this.animales.map((el,index,cur)=>{
+
+     return el.Tipo;
+     
+    });
+
+    let unique_Tipos = [...new Set(this.tipos)]
+    console.log('Tipos',unique_Tipos);
     this.coche = {
                     "nombre": "Audi r8",
                     "color":"blanco",
