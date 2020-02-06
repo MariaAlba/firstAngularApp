@@ -15,8 +15,8 @@
 {{coche.color | lowercase}}
 
 <code>coche.precio | currency</code> 
-<p>{{coche.precio | currency:'EUR':'symbol':'2.2-2'}}</p>
-<p class="alert alert-danger">TODO buscar como poner locale</p>
+<p class="alert alert-primary">Puesto con locale</p>
+<p>{{coche.precio | currency:'EUR':'symbol':'2.2-2':'es'}}</p>
 
 <code>coche.nombre | slice:0:5</code>
 <p><b>{{coche.nombre | slice: 0:5}}</b></p>
@@ -25,12 +25,17 @@
 
 <hr class="hr">
 <h3>Filtrando listas</h3>
+<label for="">Tipos</label><br>
+<select [(ngModel)]="tipo">
+  <option selected>TODOS</option>
+  <option *ngFor="let t of tipos">{{t}}</option>
+</select><br>
 
 <label for="">Búsqueda:{{busqueda}} </label>
 <input class="form-control" type="search" [(ngModel)]="busqueda" placeholder="Buscar por nombre"><br>
 
 <ul class="list-group">
-    <li *ngFor="let animal of animales | animalesFiltro: busqueda " class="list-group-item">
+    <li *ngFor="let animal of animales | animalesFiltro: busqueda : tipo " class="list-group-item">
       <img src="{{animal.Imagen}}" class="circle" width="100" height="100" alt="">  
       <div>
           <p class="nombre">{{animal.Nombre}}</p>

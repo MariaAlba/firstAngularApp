@@ -6,19 +6,29 @@ import { Pipe, PipeTransform, ɵɵelementContainerStart } from '@angular/core';
 export class AnimalesPipe implements PipeTransform {
 
  // transform(datos: any, ...args: any[]): any {
-  transform(datos: any,busqueda:string): any {
-    console.debug('value',datos);
-    console.debug('args',busqueda);
+  transform(datos: any,busqueda:string,tipo:string): any {
+    
+    let resultado = datos;
 
-    busqueda =busqueda.toUpperCase();
+  
+
+    if ( tipo && tipo !== 'TODOS' ) {
+      resultado = resultado.filter( (el) => el.Tipo === tipo);
+    }
+
+    if(busqueda && ' ' !== busqueda.trim()){
+      resultado = resultado.filter( (el) =>
+      {
+        busqueda =busqueda.toUpperCase();
+        let nombre = el.Nombre.toUpperCase();
+        return nombre.includes(busqueda)
+      });
+
+    }
+
    
     
     
-    const resultado = datos.filter( (el) =>
-    {
-      let nombre = el.Nombre.toUpperCase();
-      return nombre.includes(busqueda)
-    });
     
     return resultado;
   }//transform

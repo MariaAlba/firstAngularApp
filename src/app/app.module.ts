@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import localeEs from '@angular/common/locales/es'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PruebaComponent } from './componentes/prueba/prueba.component';
@@ -21,7 +25,8 @@ import { SubrayarDirective } from './directivas/subrayar.directive';
 import { AnimalesPipe } from './pipes/animales.pipe';
 import { FooterComponent } from './componentes/footer/footer.component';
 
-
+registerLocaleData(localeFr, 'fr');
+registerLocaleData(localeEs, 'es');
 
 
 @NgModule({
