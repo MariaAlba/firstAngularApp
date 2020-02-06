@@ -19,6 +19,7 @@ import { FiltrosComponent } from './paginas/filtros/filtros.component';
 import { HelloDirective } from './directivas/hello.directive';
 import { SubrayarDirective } from './directivas/subrayar.directive';
 import { AnimalesPipe } from './pipes/animales.pipe';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 
 
@@ -40,6 +41,7 @@ import { AnimalesPipe } from './pipes/animales.pipe';
     HelloDirective,
     SubrayarDirective,
     AnimalesPipe,
+    FooterComponent,
 
   ],
   imports: [

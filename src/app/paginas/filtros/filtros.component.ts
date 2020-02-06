@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ANIMALES} from '../../animales';
+import {ANIMALES} from '../../const/animales';
 
 @Component({
   selector: 'app-filtros',

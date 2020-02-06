@@ -4,35 +4,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a [routerLink]="['/']" routerLinkActive="router-link" class="nav-link">Inicio</a>
+        <li *ngFor="let r of rutas" class="nav-item">
+          <a [routerLink]="r.ruta" routerLinkActive="router-link" class="nav-link">
+            <span class="{{r.icono}}"></span>{{r.nombre}}</a>
         </li>
-        <li class="nav-item">             
-          <a [routerLink]="['/productos']" routerLinkActive="active" class="nav-link">Productos</a>
-        </li>
-        <li class="nav-item">             
-            <a [routerLink]="['/juego']" routerLinkActive="active" class="nav-link">Juego</a>
-        </li>
-        <li class="nav-item">             
-            <a [routerLink]="['/arrays']" routerLinkActive="active" class="nav-link">Arrays</a>
-        </li>
-        <li class="nav-item">             
-          <a [routerLink]="['/pokemon-rest']" routerLinkActive="active" class="nav-link">Pokemon-rest </a>
-      </li>
-        <li class="nav-item">             
-          <a [routerLink]="['/estilos']" routerLinkActive="active" class="nav-link">Sass </a>
-      </li>
-        <li class="nav-item">             
-          <a [routerLink]="['/juego']" routerLinkActive="active" class="nav-link">Juego </a>
-      </li>
-        <li class="nav-item">             
-          <a [routerLink]="['/directivas']" routerLinkActive="active" class="nav-link">Directivas </a>
-      </li>
-        <li class="nav-item">             
-          <a [routerLink]="['/filtros']" routerLinkActive="active" class="nav-link">Filtos </a>
-      </li>
       </ul>  
     </div>
   </nav>

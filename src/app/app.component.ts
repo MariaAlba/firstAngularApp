@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 
+
 // componente principal  que se carga al arrancar la app
 
 
@@ -19,7 +20,7 @@ import { Component } from '@angular/core';
 // title es una variable
 export class AppComponent {
 
-
+ 
 
   title = 'my-app';
   productos =  [
