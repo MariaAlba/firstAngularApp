@@ -16,7 +16,7 @@ export class PokemonService implements IPokemonService{
   }
 
   //devuelve un pokemon por su nombre
-  getPokemon(nombre:string){
+  getPokemon(nombre:string):any{
     let url = `https://pokeapi.co/api/v2/pokemon/${nombre}/`;
     console.trace('pokemonServce getPokemon '+url);
     return this.http.get(url); //devuelve un observable

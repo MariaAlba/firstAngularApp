@@ -10,7 +10,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class PokemonRestComponent implements OnInit {
 
   pokemon:Pokemon;
-  p:any;
+  p:Pokemon;
   mensaje:string;
   
   constructor(private pokemonService:PokemonService) {
@@ -18,7 +18,7 @@ export class PokemonRestComponent implements OnInit {
     this.pokemon = new Pokemon('pikachu');
     console.debug(this.pokemon);
  
-    this.p ={};
+    this.p =new Pokemon('');
     this.mensaje ='';
    
    }
