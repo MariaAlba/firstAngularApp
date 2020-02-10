@@ -1,15 +1,61 @@
 <h2>Tareas</h2>
-<p>Ejemplo de provider o servicio para hacer un CRUD completo</p>
+<p class="">Ejemplo de provider o servicio para hacer un CRUD completo</p>
 
-<ul class="list-group">
-    <li class="list-group-item" *ngFor="let t of tareas">
-        <input class="mr-2" type="checkbox" [checked]="t.completada" (click)="editarEstado(t)">
-        <b>{{t.id}}</b>
-        <span class="titulo {{(t.completada) ? 'completada': ''}} ml-2">
-            {{t.titulo}}
-        </span>
-        <span class="float-right papelera" (click)="eliminar(t)"> 
-            <i class="fas fa-trash"></i>
-        </span>
-    </li>
-</ul>
+<div class="container p-4 my-4 fondo">
+
+    <div class="col-lg-8 m-auto transparente py-4">
+        
+
+            <div *ngIf="mensaje!=''" class="alert alert-info alert-dismissible fade show mt-2" role="alert">
+                <b>{{mensaje}}</b>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+
+            <div class="form-group row mb-4">
+                <div class="col-lg-1"></div>
+                <div class="col-sm-10">
+                    <label class="control-label">Tarea</label>
+                    <input type="text" class="form-control" [(ngModel)]="tituloNuevo"> 
+                </div>
+                <div class="col-lg-1">
+                    <label class="control-label"><br></label><br>
+                    <button class="btn btn-primary float-right" (click)="nuevaTarea()">
+                        <i class="fas fa-plus"></i>
+                    </button>
+            
+                </div>
+              
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-lg-10 m-auto">
+                   <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let t of tareas">
+                            <input class="mr-2" type="checkbox" [checked]="t.completada" (click)="editarEstado(t)">
+                            <b>{{t.id}}</b>
+                            <span class="titulo {{(t.completada) ? 'completada': ''}} ml-2">
+                                <input type="text" 
+                                value="{{t.titulo}}"
+                                [(ngModel)]="t.titulo"
+                                (blur)="editarTitulo(t)"
+                                class="forn-control w-75">
+                            </span>
+                            <span class="float-right btn btn-outline-danger btn-sm  papelera" (click)="eliminar(t)"> 
+                                <i class="fas fa-trash"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+      
+    </div>
+   
+    
+   
+    
+   
+</div>
+

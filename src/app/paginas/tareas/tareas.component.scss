@@ -6,3 +6,19 @@ li{
     }
     span.papelera{cursor:pointer;}
 }
+
+.fondo{
+    min-height: 70vh;
+    background-image: url('../../../assets/fondob.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.transparente{
+    background-color: rgb(158, 158, 158, 0.5);
+}
+
+.list-group-item{
+    padding: .65rem 1.20rem !important;
+}
