@@ -1,0 +1,8 @@
+li{
+    span.titulo{font-weight: 500;}
+    span.completada{
+        text-decoration: line-through;
+        color:rgb(139, 136, 136);
+    }
+    span.papelera{cursor:pointer;}
+}
