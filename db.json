@@ -1,4 +1,26 @@
 {
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Crear datos json",
+      "completada": true
+    },
+    {
+      "id": 2,
+      "titulo": "Crear modelo con interfaz",
+      "completada": false
+    },
+    {
+      "id": 3,
+      "titulo": "Descanso a 10:30",
+      "completada": false
+    },
+    {
+      "id": 4,
+      "titulo": "Crear provider",
+      "completada": false
+    }
+  ],
   "colores": [
     {
       "id": 1,

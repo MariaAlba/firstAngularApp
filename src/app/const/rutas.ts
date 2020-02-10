@@ -28,6 +28,11 @@ export const RUTAS = [
         'ruta': '/filtros',
         'nombre': 'Filtros',
         'icono': 'fas fa-bullhorn'
+    },
+    {
+        'ruta': '/tareas',
+        'nombre': 'Tareas',
+        'icono': 'fas fa-bullhorn'
     }
 ];
 

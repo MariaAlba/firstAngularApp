@@ -9,6 +9,7 @@ import { DirectivasComponent } from './paginas/directivas/directivas.component';
 import { FiltrosComponent } from './paginas/filtros/filtros.component';
 import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
+import { TareasComponent } from './paginas/tareas/tareas.component';
 
 /**
  * Definir las rutas de la app de angular
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'juego', component: JuegoComponent},
   {path: 'directivas', component: DirectivasComponent},
   {path: 'filtros', component: FiltrosComponent},
+  {path: 'tareas', component: TareasComponent},
   //pNombre es un parametro. Los : sirvern para indicar que es una variable
   {path: 'saludar/:pNombre', component: SaludarComponent},
   {path: '**', component: Error404Component}
