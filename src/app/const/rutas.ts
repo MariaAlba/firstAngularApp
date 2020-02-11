@@ -33,6 +33,11 @@ export const RUTAS = [
         'ruta': '/tareas',
         'nombre': 'Tareas',
         'icono': 'fas fa-bullhorn'
+    },
+    {
+        'ruta': '/privado',
+        'nombre': 'Privado',
+        'icono': 'fas fa-bullhorn'
     }
 ];
 

@@ -5,6 +5,8 @@ li{
         color:rgb(139, 136, 136);  
     }
     span.papelera{cursor:pointer;}
+
+    &:hover{background-color:#007bff8a;}
 }
 
 .fondo{
@@ -21,4 +23,5 @@ li{
 
 .list-group-item{
     padding: .65rem 1.20rem !important;
+    margin-bottom:0.5rem;
 }

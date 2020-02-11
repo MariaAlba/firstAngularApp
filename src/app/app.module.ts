@@ -27,6 +27,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
+import { PrivadoComponent } from './paginas/privado/privado.component';
 
 registerLocaleData(localeFr, 'fr');
 registerLocaleData(localeEs, 'es');
@@ -53,6 +54,7 @@ registerLocaleData(localeEs, 'es');
     Error404Component,
     SaludarComponent,
     TareasComponent,
+    PrivadoComponent,
 
   ],
   imports: [

@@ -11,15 +11,22 @@ export class TareasComponent implements OnInit {
 
   tareas: Array<Tarea>;
   tituloNuevo: string;
+  
+  //gestion mensajes
   mensaje:string;
+  showMensaje:boolean;
 
+  modoEdicion:boolean;
 
   constructor(private servicioTarea: TareasService) {
     console.trace('Constructor TareasComponent');
     this.tareas = []; //inicializar
     this.tituloNuevo = '';
+    
     this.mensaje = '';
+    this.showMensaje = false;
 
+    this.modoEdicion = false;
 
   }//constructor
 
@@ -42,7 +49,10 @@ export class TareasComponent implements OnInit {
 
   nuevaTarea():void{
     console.debug('click nueva tarea %s', this.tituloNuevo);
-    if (this.validarTitulo(this.tituloNuevo)==false){this.mensaje = 'No puede crear una tarea vacía ni de una letra';}
+    if (this.validarTitulo(this.tituloNuevo)==false){
+      this.mensaje = 'No puede crear una tarea vacía ni de una letra';
+      this.showMensaje = true;
+    }
     else{
 
       //crear objeto tarea
@@ -55,6 +65,7 @@ export class TareasComponent implements OnInit {
         console.debug('nueva tarea %o',dato);
         this.cargarTareas();
         this.mensaje = `Creada con éxito la tarea  ${dato.id}  ${dato.titulo}`;
+        this.showMensaje = true;
       });
     
       this.tituloNuevo = '';
@@ -73,10 +84,14 @@ export class TareasComponent implements OnInit {
 
   editarTitulo(tarea:Tarea){
     console.debug('click %o', tarea);
-    if ( this.validarTitulo(tarea.titulo)==false) {this.mensaje = 'No puede crear una tarea vacía ni de una letra';}
+    if ( this.validarTitulo(tarea.titulo)==false) {
+      this.mensaje = 'No puede crear una tarea vacía ni de una letra';
+      this.showMensaje = true;
+    }
     else{
       this.servicioTarea.modificar(tarea).subscribe( (data) => {
         this.mensaje = "Tarea modificada con éxito";
+        this.showMensaje = true;
         this.cargarTareas();
       });
     }
@@ -90,6 +105,7 @@ export class TareasComponent implements OnInit {
       this.servicioTarea.eliminar(tarea.id).subscribe(
         () => {
           this.mensaje = `Eliminada con éxito la tarea ${tarea.id} - ${tarea.titulo}`;
+          this.showMensaje = true;
           this.cargarTareas()
         });
 
@@ -110,11 +126,15 @@ export class TareasComponent implements OnInit {
     this.servicioTarea.listar().subscribe((datos) => {
       console.debug('esto se ejecuta de forma asincrona');
       this.tareas = datos.reverse();
-      if(this.tareas.length===0){this.mensaje="No hay tareas asignadas";}
+      if(this.tareas.length===0){
+        this.mensaje="No hay tareas asignadas";
+        this.showMensaje = true;
+      }
     },
     (error) => {
       console.debug('JSON SERVER PARADO',error);
       this.mensaje = 'Error inesperado: no es posible conectar con el servidor';
+      this.showMensaje = true;
     }
     
     

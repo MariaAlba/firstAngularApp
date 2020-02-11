@@ -6,9 +6,9 @@
     <div class="col-lg-8 m-auto transparente py-4">
         
 
-            <div *ngIf="mensaje!=''" class="alert alert-info alert-dismissible fade show mt-2" role="alert">
+            <div *ngIf="showMensaje" class="alert alert-info alert-dismissible fade show mt-2" role="alert">
                 <b>{{mensaje}}</b>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <button type="button" (click)="showMensaje=false" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
             </div>
@@ -32,17 +32,18 @@
             <div class="row mb-2">
                 <div class="col-lg-10 m-auto">
                    <ul class="list-group">
-                        <li class="list-group-item" *ngFor="let t of tareas">
+                        <li class="list-group-item" *ngFor="let t of tareas" >
                             <input class="mr-2" type="checkbox" [checked]="t.completada" (click)="editarEstado(t)">
                             <b>{{t.id}}</b>
-                            <span class="titulo {{(t.completada) ? 'completada': ''}} ml-2">
+                            <span class="titulo {{(t.completada) ? 'completada': ''}} ml-2" (click)="modoEdicion = true">
                                 <input type="text" 
                                 value="{{t.titulo}}"
                                 [(ngModel)]="t.titulo"
-                                (blur)="editarTitulo(t)"
-                                class="form-control w-75">
+                                (blur)="editarTitulo(t); modoEdicion = false"
+                                [disabled] = "!modoEdicion"
+                                class="w-75 form-control d-inline">
                             </span>
-                            <span class="float-right btn btn-outline-danger btn-sm  papelera" (click)="eliminar(t)"> 
+                            <span class="float-right btn btn-outline-danger btn-sm papelera" (click)="eliminar(t)"> 
                                 <i class="fas fa-trash"></i>
                             </span>
                         </li>
