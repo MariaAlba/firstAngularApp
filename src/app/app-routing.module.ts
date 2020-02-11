@@ -11,6 +11,8 @@ import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
 import { PrivadoComponent } from './paginas/privado/privado.component';
+import { LoginGuard } from './guards/login.guard';
+import { LoginComponent } from './paginas/login/login.component';
 
 /**
  * Definir las rutas de la app de angular
@@ -25,7 +27,9 @@ const routes: Routes = [
   {path: 'directivas', component: DirectivasComponent},
   {path: 'filtros', component: FiltrosComponent},
   {path: 'tareas', component: TareasComponent},
-  {path: 'privado', component: PrivadoComponent},
+  {path: 'login', component: LoginComponent},
+  //vamos a proteger esta ruta con una GUARDA
+  {path: 'privado', component: PrivadoComponent, canActivate:[LoginGuard]},
   //pNombre es un parametro. Los : sirvern para indicar que es una variable
   {path: 'saludar/:pNombre', component: SaludarComponent},
   {path: '**', component: Error404Component}

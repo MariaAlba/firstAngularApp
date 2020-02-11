@@ -17,6 +17,8 @@ import { EjemploClaseComponent } from './paginas/ejemplo-clase/ejemplo-clase.com
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
 import { EstilosComponent } from './paginas/estilos/estilos.component';
 import { FormsModule } from '@angular/forms';
+
+import { ReactiveFormsModule } from '@angular/forms';
 import { JuegoComponent } from './paginas/juego/juego.component';
 import { DirectivasComponent } from './paginas/directivas/directivas.component';
 import { FiltrosComponent } from './paginas/filtros/filtros.component';
@@ -28,6 +30,7 @@ import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
 import { PrivadoComponent } from './paginas/privado/privado.component';
+import { LoginComponent } from './paginas/login/login.component';
 
 registerLocaleData(localeFr, 'fr');
 registerLocaleData(localeEs, 'es');
@@ -55,13 +58,15 @@ registerLocaleData(localeEs, 'es');
     SaludarComponent,
     TareasComponent,
     PrivadoComponent,
+    LoginComponent,
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule, //modulo para llamadas HTTP
     AppRoutingModule,
-    FormsModule //modulo para formus con banan in a box
+    FormsModule, //modulo para formus con banan in a box
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

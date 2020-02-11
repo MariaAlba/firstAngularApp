@@ -1,0 +1,82 @@
+<h1>Iniciar sesion</h1>
+
+<h2>Formulario reactivo</h2>
+<p>Los usamos cuando son formularios mas complejos que requieren validaciones por ejemplo</p>
+
+<hr class="hr">
+
+<div class="row p-4">
+    
+    <div class="col">
+        <h4 class="h4 text-center">Formulario</h4>
+        <form [formGroup] ="formulario"  (ngSubmit)="enviar(formulario.value)" class="border p-3">
+        
+            <div class="row">
+            
+                <div class="col-lg-10 m-auto">
+
+                    <label class="control-label">Usuario</label>                            
+                    <input type="text" formControlName="nombre" minlength="5" maxlength="100"
+                    class="form-control">  
+                       
+                    <small *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.dirty"
+                    class="text-danger">Mínimo 2 - Máximo 100</small>
+                </div>
+            
+                <div class="col-lg-10 m-auto">
+
+                    <label class="control-label">Contraseña</label>                                        
+                    <input type="text" formControlName="password" minlength="5" maxlength="7" 
+                    class="form-control">     
+
+                    <small *ngIf="formulario.controls.password.invalid && formulario.controls.password.dirty"
+                    class="text-danger">Mínimo 5 - Máximo 7</small>
+                </div>
+            </div>
+            <br>
+        <div class="row text-center">
+                <input type="submit" 
+                [disabled]="formulario.invalid" 
+                value="Login"
+                class="btn btn-primary m-auto w-50"
+                >
+        </div>    
+        </form>
+    </div><!--cierre col 2-->
+    
+    <div class="col">
+
+        <pre>{{formulario.value | json}}</pre>
+        <pre>{{formulario.status | json}}</pre>
+        <pre>{{formulario.controls.nombre.errors | json}}</pre>
+
+        <pre>valid: {{ formulario.controls.password.valid | json }}</pre>      
+        <pre>invalid: {{ formulario.controls.password.invalid | json }}</pre>      
+        <pre>dirty: {{ formulario.controls.password.dirty | json }}</pre>      
+        <pre>pristine: {{ formulario.controls.password.pristine | json }}</pre>      
+        <pre>touched: {{ formulario.controls.password.touched | json }}</pre>      
+        <pre>untouched: {{ formulario.controls.password.untouched | json }}</pre>      
+        <pre>Errors: {{ formulario.controls.password.errors | json }}</pre>      
+    </div><!--cierre col 2-->
+
+</div> <!--cierra row-->
+
+
+<hr class="hr">
+
+<h3>Apuntes </h3>
+<p>Se pueden usar validadores personalizados</p>
+<p>
+    Atributos del formulario
+</p>
+
+
+
+
+<h4>Formulario de tipo ...</h4>
+<p>a la variable le llamamos FormGroup</p>
+<p class="alert alert-warning">Hay que importar un modulo de angular de <code>ReactiveForms</code> en appModule</p>
+<p>Importar private FormBuilder en el constructor</p>
+<p>Input = form control</p>
+<hr>
+
