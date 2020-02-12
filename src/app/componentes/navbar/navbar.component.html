@@ -11,6 +11,24 @@
           <a [routerLink]="r.ruta" routerLinkActive="router-link" class="nav-link">
             <span class="{{r.icono}}"></span>{{r.nombre}}</a>
         </li>
+
+        <!--rutas si el usuario esta logeado o no-->
+        <li class="nav-item">
+          <a *ngIf="!usuarioService.estaLogeado()" [routerLink]="'/login'" routerLinkActive="router-link" class="nav-link">
+            Iniciar sesión</a>
+        </li>
+        
+        <li class="nav-item">
+          <a *ngIf="usuarioService.estaLogeado()" [routerLink]="'/privado'" routerLinkActive="router-link" class="nav-link">
+           Privado</a>
+        </li>
+
+        <li class="nav-item">
+          <a *ngIf="usuarioService.estaLogeado()" (click)="salir()" class="nav-link">Cerrar sesión</a>
+        </li>
+
       </ul>  
     </div>
+
+   estaLogeado =  {{usuarioService.estaLogeado()}}
   </nav>

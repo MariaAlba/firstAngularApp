@@ -1,4 +1,21 @@
 {
+  "tareas": [
+    {
+      "id": 1,
+      "completada": false,
+      "titulo": "bbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": 2,
+      "completada": false,
+      "titulo": "no ponjbubui"
+    },
+    {
+      "id": 3,
+      "completada": true,
+      "titulo": "jhjhihiohiohio"
+    }
+  ],
   "colores": [
     {
       "id": 1,

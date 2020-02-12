@@ -1,0 +1,27 @@
+li{
+    span.titulo{font-weight: 500;}
+    span.completada {
+        text-decoration: line-through;
+        color:rgb(139, 136, 136);  
+    }
+    span.papelera{cursor:pointer;}
+
+    &:hover{background-color:#007bff8a;}
+}
+
+.fondo{
+    min-height: 70vh;
+    background-image: url('../../../assets/fondob.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.transparente{
+    background-color: rgb(158, 158, 158, 0.5);
+}
+
+.list-group-item{
+    padding: .65rem 1.20rem !important;
+    margin-bottom:0.5rem;
+}

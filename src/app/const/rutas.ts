@@ -5,6 +5,11 @@ export const RUTAS = [
         'icono': 'fas fa-bullhorn'
     },
     {
+        'ruta': 'juego',
+        'nombre': 'Juego',
+        'icono': 'fas fa-bullhorn'
+    },
+    {
         'ruta': '/arrays',
         'nombre': 'Arrays',
         'icono': 'fas fa-bullhorn'
@@ -28,6 +33,22 @@ export const RUTAS = [
         'ruta': '/filtros',
         'nombre': 'Filtros',
         'icono': 'fas fa-bullhorn'
+    },
+    {
+        'ruta': '/tareas',
+        'nombre': 'Tareas',
+        'icono': 'fas fa-bullhorn'
     }
+    //,
+    // {
+    //     'ruta': '/login',
+    //     'nombre': 'Iniciar sesion',
+    //     'icono': 'fas fa-bullhorn'
+    // },
+    // {
+    //     'ruta': '/privado',
+    //     'nombre': 'Privado',
+    //     'icono': 'fas fa-bullhorn'
+    // }
 ];
 
