@@ -23,6 +23,12 @@ export class UsuarioService implements IUsuarioService {
     return this.isLogged;
   }
   
+  /**
+   * Busca usuario por nombre y pass
+   * @param nombre 
+   * @param password 
+   * @return usuario si existe, undefined si no existe
+   */
   login(nombre: string, password: string):Usuario {
     console.trace('login',nombre,password);
 

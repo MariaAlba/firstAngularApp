@@ -38,16 +38,17 @@ export const RUTAS = [
         'ruta': '/tareas',
         'nombre': 'Tareas',
         'icono': 'fas fa-bullhorn'
-    },
-    {
-        'ruta': '/login',
-        'nombre': 'Login',
-        'icono': 'fas fa-bullhorn'
-    },
-    {
-        'ruta': '/privado',
-        'nombre': 'Privado',
-        'icono': 'fas fa-bullhorn'
     }
+    //,
+    // {
+    //     'ruta': '/login',
+    //     'nombre': 'Iniciar sesion',
+    //     'icono': 'fas fa-bullhorn'
+    // },
+    // {
+    //     'ruta': '/privado',
+    //     'nombre': 'Privado',
+    //     'icono': 'fas fa-bullhorn'
+    // }
 ];
 
