@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
-import localeEs from '@angular/common/locales/es'
+import localeEs from '@angular/common/locales/es';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
