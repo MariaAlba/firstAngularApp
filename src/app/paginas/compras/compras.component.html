@@ -1,0 +1,15 @@
+<h2 class="mb-5">Comunicación entre componentes</h2>
+
+<div class="row">
+    
+    <!--Listado-->
+    <div class="col">
+        <app-listado (pasameFrutaEvento)= "recogerEvento($event)"></app-listado>
+    </div>
+    
+    <!--Detalle-->
+    <div class="col">
+        <app-detalle [fruta]="frutaSeleccionada"></app-detalle>
+    </div>
+
+</div>

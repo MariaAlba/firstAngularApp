@@ -31,6 +31,9 @@ import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
 import { PrivadoComponent } from './paginas/privado/privado.component';
 import { LoginComponent } from './paginas/login/login.component';
+import { ComprasComponent } from './paginas/compras/compras.component';
+import { ListadoComponent } from './paginas/compras/listado/listado.component';
+import { DetalleComponent } from './paginas/compras/detalle/detalle.component';
 
 registerLocaleData(localeFr, 'fr');
 registerLocaleData(localeEs, 'es');
@@ -59,6 +62,9 @@ registerLocaleData(localeEs, 'es');
     TareasComponent,
     PrivadoComponent,
     LoginComponent,
+    ComprasComponent,
+    ListadoComponent,
+    DetalleComponent,
 
   ],
   imports: [

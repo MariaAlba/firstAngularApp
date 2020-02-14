@@ -1,0 +1,10 @@
+<p>detalle works!</p>
+
+<div class="card {{ (frutaInicial.nombre !== '' ) ? inactiva : '' }}" style="width: 18rem;">
+    <img class="card-img-top" src="{{frutaInicial.imagen}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{frutaInicial.nombre}}</h5>
+      <p class="card-text">{{frutaInicial.precio | currency}}</p>
+      <a href="#" class="btn btn-outline-primary btn-block">Comprar</a> 
+    </div>
+  </div>

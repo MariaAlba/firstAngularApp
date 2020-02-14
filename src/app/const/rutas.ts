@@ -38,6 +38,11 @@ export const RUTAS = [
         'ruta': '/tareas',
         'nombre': 'Tareas',
         'icono': 'fas fa-bullhorn'
+    },
+    {
+        'ruta': '/componentes',
+        'nombre': 'Input Output',
+        'icono': 'fas fa-bullhorn'  
     }
     //,
     // {
